@@ -1,6 +1,7 @@
 .body{
     background-color:#2d2013;
 }
+/* search div start */
 .search-div {
     display: flex;
     align-items: center;
@@ -20,11 +21,15 @@
     color: rgb(245, 238, 238);
     font-weight:bolder;
 }
+/* search div end */
 
+/* every food item image */
 .image {
     width: 200px;
 }
+/* every food item image */
 
+/* how item display start */
 #show-item {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
@@ -32,29 +37,13 @@
     align-items: center;
     justify-content: center;
 }
+/* how item display end*/
 
+/* error message start */
 #error-message {
     display: grid;
     align-self: center;
     justify-content: center;
-}
-
-.text{
-    font-weight: bolder;
-    text-align: center;
-    color: white;
-}
-
-.text-style{
-    color: white;
-}
-
-.single-div{
-    padding: 20px;
-}
-
-.li-text {
-    color: white;
 }
 
 .error-messege-color {
@@ -67,7 +56,26 @@
     padding:30px;
     border-radius: 10px;
 }
+/* error message end */
+.text{
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+}
 
+.text-style{
+    color: white;
+}
+/* single div which contain food item */
+.single-div{
+    padding: 20px;
+}
+/* list text color */
+.li-text {
+    color: white;
+}
+
+/* back button */
 .back-btn {
     background-color: red;
     color: white;
@@ -76,12 +84,13 @@
     border-radius: 5px;
 }
 
+/* ingredients */
 #ingredients {
     margin: auto;
     width: 15%;
 }
 
-#food-item {
+/* #food-item {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-}
+} */

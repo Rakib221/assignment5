@@ -1,4 +1,4 @@
-
+// take input
 const inputItem = document.getElementById("input");
 
 document.getElementById("search-button").addEventListener("click",() => {
@@ -9,21 +9,21 @@ document.getElementById("search-button").addEventListener("click",() => {
 
         inputItem.value = "";
 })
-
+// show item when input first letter of food
 input.addEventListener("input",() => {
     document.getElementById("show-item").innerHTML = "";
     searchFoodBySingleAlphabet(input.value);
     
 })
-
+// convert data into jason 
 const searchFoodBySingleAlphabet = food => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${food}`)
     .then(response => response.json())
     .then(data => showFood(data))
 }
-
+// show data
 const showFood = data => {
-   
+//    if data is null
     const foodItems = document.getElementById("show-item");
 
     if (data.meals === null) {
@@ -45,7 +45,7 @@ const showFood = data => {
         showErrorMessage.appendChild(img);
         showErrorMessage.appendChild(h3);
         
-
+// back button
         const button = document.createElement("button");
         button.innerText = "Back";
         button.className = "back-btn";
@@ -60,7 +60,7 @@ const showFood = data => {
 
         
     }
-
+// if data is not null
     else{
         data.meals.forEach(food => {
             const singleItem = document.createElement("div");
@@ -72,7 +72,7 @@ const showFood = data => {
             `
             singleItem.innerHTML = foodInfo;
             foodItems.appendChild(singleItem);
-
+// when click in a item
             singleItem.addEventListener("click",() =>{
                 const ul = document.createElement("ul");
                 
@@ -88,7 +88,7 @@ const showFood = data => {
 
                 const key = Object.keys(food);
                 const value = Object.values(food);
-
+// about ingredients
                 const ingredientsTitle = `
                 <img class ="image" src = "${food.strMealThumb}">
                 <h3 class = "text-style">${food.strMeal}</h3>
@@ -109,7 +109,7 @@ const showFood = data => {
                     
                     li.innerText = `${food[arrayOfStrIngredient[j]]} ${food[arrayOfStrMeasure[j]]}`
                     ul.appendChild(li);
-
+// back button
                 const button = document.createElement("button");
                     button.innerText = "Back";
                     button.className = "back-btn";
