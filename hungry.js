@@ -13,7 +13,7 @@ document.getElementById("search-button").addEventListener("click",() => {
 input.addEventListener("input",() => {
     document.getElementById("show-item").innerHTML = "";
     searchFoodBySingleAlphabet(input.value);
-    
+    inputItem.value = "";
 })
 // convert data into jason 
 const searchFoodBySingleAlphabet = food => {
